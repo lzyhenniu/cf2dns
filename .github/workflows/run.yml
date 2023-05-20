@@ -9,7 +9,7 @@ on:
 
 env:
   UPDATE_IPV4: true
-  UPDATE_IPV6: ture
+  UPDATE_IPV6: true
 jobs:
   build:
     runs-on: ubuntu-latest
