@@ -33,7 +33,7 @@ REGION_HW = 'cn-east-3'
 REGION_ALI = 'cn-hongkong'
 
 #解析生效时间，默认为600秒 如果不是DNS付费版用户 不要修改!!!
-TTL = 600
+TTL = 60
 
 #v4为筛选出IPv4的IP  v6为筛选出IPv6的IP
 TYPE = 'v4'
@@ -51,7 +51,7 @@ def get_optimization_ip():
     try:
         headers = headers = {'Content-Type': 'application/json'}
         data = {"key": KEY, "type": TYPE}
-        response = requests.post('http://api.hostmonit.com/get_optimization_ip', json=data, headers=headers)
+        response = requests.post('https://api.hostmonit.com/get_optimization_ip', json=data, headers=headers)
         if response.status_code == 200:
             return response.json()
         else:
